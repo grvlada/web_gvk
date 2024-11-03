@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма регистрации участника</title>
+    <style>
+        .body-container {
+            background: linear-gradient(to right, #9933FF, #330099);
+        }
+        h1 {
+            text-transform: uppercase;
+            background: linear-gradient(45deg, #9933FF 33%, #6633CC 66%, #330099);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: #0B2349;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            max-width: 700px;
+            padding: 10px 30px;
+            background: #CCCCFF;
+            margin: 10px auto;
+            padding: 45px;
+            background: #CCCCFF;
+            border-radius: 8px;
+            font-family: Georgia, "Times New Roman", Times, serif;
+            border: none;
+            border-radius: 4px;
+        }
+        .container label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+        }
+        .form-input {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        input[type=submit] {
+            width: 100%;
+            height: 30px;
+            background-color: #AAFFCC;
+        }
+        input[type=submit]:hover {
+            background-color: #0CFF00;
+            cursor: pointer;
+        }
+        input[type=submit]:active {
+            background-color: #000;
+        }
+        #submit-input {
+            display: inline-block;
+            box-sizing: border-box;
+            padding: 0 20px;
+            margin: 0 15px 15px 0;
+            outline: none;
+            border: none;
+            border-radius: 6px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 17px;
+            font-weight: 600;
+            text-decoration: none;
+            color: #9933FF;
+            background-color: #e7f3ff;
+            cursor: pointer;
+            user-select: none;
+            appearance: none;
+            touch-action: manipulation;
+        }
+        #submit-input:focus-visible {
+            box-shadow: 0 0 0 2px #666;
+        }
+        #submit-input:hover {
+            background-color: #DBE7F2;
+        }
+        #submit-input:active {
+            transform: scale(0.96);
+        }
+        #submit-input:disabled {
+            pointer-events: none;
+            opacity: 0.65;
+        }
+        input, select {
+            font-family: Georgia, "Times New Roman", Times, serif;
+            font-size: 17px;
+        }
+        .input-error {
+            border-color: red;
+        }
+        .error-message {
+            color: red;
+        }
+    </style>
+</head>
+<body class="body-container">
+<div class="container">
+    <h1>Форма регистрации участника</h1>
+    <form action="/reg-data" method="post">
+        <div class="form-input" id="name-input-container">
+            <label for="user-name-input">Введите Ваше имя</label>
+            <input id="user-name-input" type="text" placeholder="Name" name="username"/>
+        </div>
+        <div class="form-input">
+            <label for="number-input">Введите номер телефона</label>
+            <input type="text" id="number-input" name="number"/>
+        </div>
+        <div class="form-input">
+            <label for="spec-type-input">Выберите направление</label>
+            <select id="spec-type-input">
+                <option value="0">Веб-разработка</option>
+                <option value="1">Искусственный интеллект</option>
+                <option value="2">Разработка видеоигр</option>
+            </select>
+        </div>
+        <div class="form-input">
+            <label for="email-input">Введите почтовый ящик для обратной связи</label>
+            <input type="email" id="email-input" name="email"/>
+        </div>
+        <div>
+            <button id="submit-input" onsubmit="">Подать заявку</button>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    const nameInput = document.querySelector("#user-name-input");
+
+    let inputValue;
+
+    nameInput.addEventListener("input", ()=>{
+        inputValue = nameInput.value;
+        console.log(inputValue);
+    });
+
+    nameInput.addEventListener("blur", ()=>{
+        if (!inputValue || inputValue.length < 5) {
+            nameInput.className = "input-error";
+            alert("Минимальное количество символов для имени - 5");
+        }
+    });
+
+    const numberInput = document.querySelector("#number-input");
+
+    let numberValue;
+
+    numberInput.addEventListener("input", ()=>{
+        numberValue = numberInput.value;
+        console.log(numberValue);
+
+    });
+
+    function validateNumber(input) {
+        let re = /^[\d\+][\d\(\)\ -]{4,14}\d$/;
+
+        return re.test(input)
+    }
+
+    numberInput.addEventListener("blur", ()=>{
+        if (!validateNumber(numberValue)) {
+            alert("Неверно введен номер телефона");
+        }
+    });
+
+</script>
+</body>
+</html>

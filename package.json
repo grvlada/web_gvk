@@ -1,0 +1,16 @@
+{
+  "name": "web_gvk",
+  "version": "1.0.0",
+  "description": "The web project of the student Grishina V",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "nodemon index.js",
+    "start:prod": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1",
+    "nodemon": "^3.1.7"
+  }
+}
