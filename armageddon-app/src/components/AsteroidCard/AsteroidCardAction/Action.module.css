@@ -1,0 +1,24 @@
+.actionGrade {
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.action {
+    background-color: #3344dc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.action:hover {
+    background-color: #c9191e;
+}
