@@ -1,0 +1,59 @@
+/*.card {
+    border: 1px solid #000000;
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    height: 20%;
+    position: relative;
+    margin: 16px auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+*/
+.cardRed {
+    border: 1px solid #000000;
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    height: 20%;
+    position: relative;
+    margin: 16px auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, #FFB199 0%, #EB1E22 100%);
+}
+
+.regularCard {
+    border: 1px solid #000000;
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    height: 20%;
+    position: relative;
+    margin: 16px auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, #CFF37D 0%, #7DE88C 100%);
+}
