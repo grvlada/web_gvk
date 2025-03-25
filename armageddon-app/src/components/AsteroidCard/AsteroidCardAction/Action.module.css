@@ -18,3 +18,7 @@
     text-align: center;
     transition: background-color 0.3s ease;
 }
+
+.action:hover {
+    background-color: #c9191e;
+}
